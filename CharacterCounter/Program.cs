@@ -43,10 +43,12 @@ namespace CharacterCounter
             {
                 if (myDictionary.ContainsKey(ch))
                 {
-                    myDictionary[ch] += 1;
+                    // accessing and incrementing the value of ch using ch as an index
+                    myDictionary[ch]++;
                 }
                 else
                 {
+                    // adding a new dictionary item
                     myDictionary.Add(ch, 1);
                 }
             }
