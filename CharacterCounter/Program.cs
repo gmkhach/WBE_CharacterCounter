@@ -39,17 +39,15 @@ namespace CharacterCounter
         static Dictionary<char, int> CharacterCounter(string input)
         {
             Dictionary<char, int> myDictionary = new Dictionary<char, int>();
-            int value = 1;
-            for (int i = 0; i < input.Length; i++)
+            foreach (var ch in input)
             {
-                if (i != input.Length - 1 && input[i] == input[i + 1])
+                if (myDictionary.ContainsKey(ch))
                 {
-                    value++;
+                    myDictionary[ch] += 1;
                 }
                 else
                 {
-                    myDictionary.Add(input[i], value);
-                    value = 1;
+                    myDictionary.Add(ch, 1);
                 }
             }
             return myDictionary;
